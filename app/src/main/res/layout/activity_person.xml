@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.zzg.zcib.activity.PersonActivity">
+
+    <com.zzg.zcib.view.CircleImageView
+        android:id="@+id/person_img"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_centerHorizontal="true"
+        app:civ_border_width="2dp"
+        app:civ_border_color="#fff"
+        android:layout_margin="5dp"/>
+    <TextView
+        android:id="@+id/person_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/person_img"
+        android:text="南昌"/>
+    <TextView
+        android:id="@+id/person_email"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/person_name"
+        android:text="123456@qq.com"/>
+    <TextView
+        android:id="@+id/person_phone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/person_email"
+        android:text="123456789"/>
+    <Button
+        android:id="@+id/btn_person_add"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="添加好友"
+        android:layout_alignParentBottom="true"/>
+    <Button
+        android:id="@+id/btn_person_chat"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="发送消息"
+        android:layout_alignParentBottom="true"/>
+    <Button
+        android:id="@+id/btn_person_edit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="修改资料"
+        android:layout_alignParentBottom="true"/>
+
+
+</RelativeLayout>

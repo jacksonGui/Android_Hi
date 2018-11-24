@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.zzg.zcib.activity.RegisterActivity"
+    android:orientation="vertical">
+    <EditText
+        android:id="@+id/regi_username"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:maxLines="1"
+        android:inputType="text"
+        android:hint="请输入用户名"/>
+    <EditText
+        android:id="@+id/regi_password1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textPassword"
+        android:maxLines="1"
+        android:hint="请输入密码"/>
+    <EditText
+        android:id="@+id/regi_password2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textPassword"
+        android:maxLines="1"
+        android:hint="再次输入密码"/>
+    <EditText
+        android:id="@+id/regi_email"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:maxLines="1"
+        android:inputType="text"
+        android:hint="请输入邮箱"/>
+    <EditText
+        android:id="@+id/regi_phone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:maxLines="1"
+        android:inputType="text"
+        android:hint="请输入手机号"/>
+    <Button
+        android:id="@+id/btn_regi"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="注册"/>
+    <Button
+        android:id="@+id/btn_tologin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="去登录"/>
+
+
+</LinearLayout>

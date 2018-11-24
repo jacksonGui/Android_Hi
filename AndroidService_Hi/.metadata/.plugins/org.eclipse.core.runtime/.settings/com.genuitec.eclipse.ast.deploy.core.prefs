@@ -1,0 +1,14 @@
+#Sat Nov 24 20:33:48 CST 2018
+tomcat7Server.AndroidServiceHi.isExploded=true
+tomcat7Server.AndroidServiceHi.deployIsOverProject=false
+tomcat7Server.AndroidServiceHi.isUptoDate=true
+tomcat7Server.AndroidServiceHi.shouldOverwrite=false
+tomcat7Server.AndroidServiceHi.shouldBackup=false
+tomcat7Server.AndroidServiceHi.isDeployed=true
+tomcat7Server.AndroidServiceHi.IEARProjectName=
+tomcat7Server.AndroidServiceHi.deploymentPath=C\:\\apache-tomcat-7.0.42\\webapps\\AndroidServiceHi
+tomcat7Server.AndroidServiceHi.type=WebDeployment
+tomcat7Server.AndroidServiceHi.contextRoot=/AndroidServiceHi
+tomcat7Server.AndroidServiceHi.noFileCopy=false
+eclipse.preferences.version=1
+tomcat7Server.AndroidServiceHi.altContextRoot=

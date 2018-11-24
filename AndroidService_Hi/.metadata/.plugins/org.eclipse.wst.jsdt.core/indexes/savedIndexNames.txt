@@ -1,0 +1,6 @@
+INDEX VERSION 1.122+D:\MyAndroid\MyAndroid_Hi\AndroidService_Hi\.metadata\.plugins\org.eclipse.wst.jsdt.core\indexes
+3580887656.index
+3335711380.index
+1426771442.index
+2488163728.index
+4083080841.index

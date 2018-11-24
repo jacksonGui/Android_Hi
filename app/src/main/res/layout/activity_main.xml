@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.zzg.zcib.view.SlidingMenu xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/sliding_menu"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.zzg.zcib.activity.MainActivity">
+
+
+    <include layout="@layout/layout_slidemenu"/>
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:id="@+id/top_bar"
+            android:background="@color/bluePrimary"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <com.zzg.zcib.view.CircleImageView
+                android:id="@+id/user_img"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:layout_margin="5dp"
+                app:civ_border_width="2dp"
+                app:civ_border_color="#fff" />
+            <TextView
+                android:id="@+id/title_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="消息"
+                android:textSize="24sp"
+                android:layout_centerInParent="true"
+                android:textColor="#ffff"/>
+            <Button
+                android:id="@+id/more"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:text="+"/>
+        </RelativeLayout>
+
+        <RadioGroup
+            android:id="@+id/bottom_bar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_alignParentBottom="true">
+            <RadioButton
+                android:id="@+id/news_btn"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="消息"
+                android:gravity="center"
+                android:button="@null"
+                android:textSize="20sp"/>
+            <RadioButton
+                android:id="@+id/friends_btn"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="好友"
+                android:gravity="center"
+                android:button="@null"
+                android:textSize="20sp"/>
+            <RadioButton
+                android:id="@+id/other_btn"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="动态"
+                android:gravity="center"
+                android:button="@null"
+                android:textSize="20sp"/>
+        </RadioGroup>
+        <FrameLayout
+            android:id="@+id/main_content"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/top_bar"
+            android:layout_above="@+id/bottom_bar">
+
+        </FrameLayout>
+    </RelativeLayout>
+</com.zzg.zcib.view.SlidingMenu>

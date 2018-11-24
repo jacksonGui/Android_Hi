@@ -1,0 +1,86 @@
+package service;
+
+import java.util.List;
+import java.util.Map;
+
+import net.sf.json.JSONArray;
+import net.sf.json.JSONObject;
+import dao.UserDao;
+import entity.User;
+
+public class UserService {
+	private UserDao userDao=new UserDao();
+
+	public User login(String username, String password) {
+		
+		return userDao.findByUsername(username,password);
+	}
+
+	public JSONObject getFriendsJson(String id) {
+		List<Map<String,Object>> groupList=userDao.getGroup(id);
+		List<Map<String,Object>> friendsList=userDao.getFriends(id);
+		JSONArray jsonArray=null;
+		JSONObject one=null;
+		JSONObject friendsJson=new JSONObject();
+		JSONArray keys=new JSONArray();
+		for(int i=0;i<groupList.size();i++){
+			jsonArray=new JSONArray();
+			for(int j=0;j<friendsList.size();j++){
+				if(groupList.get(i).get("fgroup").equals(friendsList.get(j).get("fgroup"))){
+					one=new JSONObject();
+					one.put("fid", friendsList.get(j).get("fid"));
+					one.put("username", friendsList.get(j).get("username"));
+					one.put("isonline", friendsList.get(j).get("isonline"));
+					jsonArray.put(one);
+					System.out.println(jsonArray);
+				}
+			}
+			friendsJson.put(groupList.get(i).get("fgroup").toString(), jsonArray);
+			keys.put(new JSONObject().put("key", groupList.get(i).get("fgroup").toString()));
+		}
+		friendsJson.put("keys",keys);
+		
+		System.out.println(friendsJson);
+		
+		
+		return friendsJson;
+	}
+
+	public boolean register(User user) {
+		boolean flag=false;
+		int count=userDao.insertUser(user);
+		if(count!=0){
+			flag=true;
+		}
+		return flag;
+	}
+
+	public boolean hasUser(String username) {
+		boolean flag=false;
+		User user=userDao.findByUsername(username);
+		if(user==null){
+			flag=true;
+		}
+		return flag;
+	}
+
+	public JSONArray searchFriends(String username) {
+		JSONArray jsonArray=new JSONArray();
+		List<Map<String,Object>> list=userDao.findByLikeUsername(username);
+		System.out.println(list.get(0).get("username"));
+		for(int i=0;i<list.size();i++){
+			jsonArray.put(list.get(i));
+			
+		}
+		
+		return jsonArray;
+	}
+
+	public JSONObject getOneUser(String id) {
+		List<Map<String,Object>> list=userDao.findById(id);
+		JSONObject jsonObject=new JSONObject(list.get(0));
+		
+		return jsonObject;
+	}
+
+}

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <com.zzg.zcib.view.CircleImageView
+        android:id="@+id/img_item_add_receive"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        app:civ_border_width="2dp"
+        app:civ_border_color="#fff"
+        android:layout_margin="5dp"/>
+    <LinearLayout
+        android:layout_marginLeft="20dp"
+        android:layout_centerInParent="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_toRightOf="@+id/img_item_add_receive">
+        <TextView
+            android:id="@+id/name_item_add_receive"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="南昌"
+            android:textSize="20sp"/>
+        <TextView
+            android:id="@+id/time_item_add_receive"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="2018-11-21"/>
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btn_item_add_receive"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="接受"
+        android:layout_centerInParent="true"
+        android:layout_alignParentRight="true"/>
+
+</RelativeLayout>

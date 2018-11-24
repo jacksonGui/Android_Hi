@@ -1,0 +1,5 @@
+INDEX VERSION 1.126
+D:\MyAndroid\AndroidService_Hi\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\3967570885.index
+\AndroidServiceHi\src
+D:\MyAndroid\MyAndroid_Hi\AndroidService_Hi\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\3967570885.index
+\AndroidServiceHi\src

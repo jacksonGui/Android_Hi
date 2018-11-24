@@ -1,0 +1,71 @@
+package socket;
+
+import java.io.BufferedReader;
+import java.io.DataInputStream;
+import java.io.DataOutputStream;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.net.ServerSocket;
+import java.net.Socket;
+import java.util.ArrayList;
+import java.util.List;
+
+import net.sf.json.JSONObject;
+
+import entity.SocketMsg;
+import entity.SocketThread;
+
+public class MySocketT extends Thread {
+	private List<SocketMsg> msgList;
+	private List<SocketThread> socketList=new ArrayList<SocketThread>();
+	
+	public void run(){
+		try {
+			ServerSocket serverSocket =  new ServerSocket(9751);
+			while(true){
+				Socket clientSocket=serverSocket.accept();
+				System.out.println("新客户端连接............");
+				
+				DataInputStream dis=new DataInputStream(clientSocket.getInputStream());
+				String jsonString=dis.readUTF();
+				System.out.println(jsonString);
+				
+//				DataOutputStream dos=new DataOutputStream(clientSocket.getOutputStream());
+//		        dos.writeUTF(jsonString);
+//		        dos.flush();
+				
+				
+//				BufferedReader bufferedWriter = new BufferedReader(new InputStreamReader(clientSocket.getInputStream()));
+//				
+//				
+//				if(bufferedWriter.ready()){
+//					String jsonString=bufferedWriter.readLine();
+//	                
+//	                System.out.println(jsonString);
+//				}else{
+//					System.out.println("assdasd........");
+//				}
+                
+                JSONObject jsonObject=new JSONObject(jsonString);
+                if((Boolean) jsonObject.get("first")){
+                	System.out.println(jsonObject.getString("uid"));
+                	
+                	socketList.add(new SocketThread(jsonObject.getString("uid"),clientSocket));
+                }else{
+                	msgList.add(new SocketMsg(jsonObject.getString("fid"),jsonObject.getString("msg")));
+                }
+
+				MySocketThread myThread=new MySocketThread(msgList,socketList);
+				myThread.start();
+                
+
+
+					
+			}
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+
+}

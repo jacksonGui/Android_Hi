@@ -1,0 +1,60 @@
+package dao;
+
+import java.util.List;
+import java.util.Map;
+
+import utils.DBUtils;
+import entity.User;
+
+public class UserDao {
+
+	public User findByUsername(String username, String password) {
+		User user=null;
+		String sql="select * from user where username=? and password=?";
+		List<Map<String,Object>> list=DBUtils.query(sql, username,password);
+		if(!list.isEmpty()){
+			user=new User();
+			user.setUsername((String)list.get(0).get("username"));
+			user.setPassword((String)list.get(0).get("password"));
+			user.setId((Integer)list.get(0).get("id"));
+		}
+		return user;
+	}
+
+	public List<Map<String, Object>> getGroup(String id) {
+		String sql="select distinct fgroup from friends where uid=?";
+		return DBUtils.query(sql, id);
+	}
+
+	public List<Map<String, Object>> getFriends(String id) {
+		String sql="select a.fid,a.fgroup,b.username,b.isonline from friends as a,user as b where a.uid=? and a.fid=b.id";
+		return DBUtils.query(sql, id);
+	}
+
+	public int insertUser(User user) {
+		String sql="insert into user(username,password,email,phone) value(?,?,?,?)";
+		Object[] params={
+				user.getUsername(),user.getPassword(),user.getEmail(),user.getPhone()
+		};
+		return DBUtils.update(sql, params);
+	}
+	
+	public User findByUsername(String username) {
+		User user=null;
+		String sql="select * from user where username=?";
+		List<Map<String,Object>> list=DBUtils.query(sql, username);
+		if(!list.isEmpty()){
+			user=new User();
+			user.setUsername((String)list.get(0).get("username"));
+			user.setPassword((String)list.get(0).get("password"));
+			user.setId((Integer)list.get(0).get("id"));
+		}
+		return user;
+	}
+
+	public List<Map<String, Object>> findByLikeUsername(String username) {
+		String sql="select id,username,isonline from user where username like %?%";
+		return DBUtils.query(sql, username);
+	}
+
+}
