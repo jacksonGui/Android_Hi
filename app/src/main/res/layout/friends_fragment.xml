@@ -2,11 +2,17 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
-    <ExpandableListView
-        android:id="@+id/friends_list"
+    <android.support.v4.widget.SwipeRefreshLayout
+        android:id="@+id/friends_swipe_refresh"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
+        <ExpandableListView
+            android:id="@+id/friends_list"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
 
-    </ExpandableListView>
+        </ExpandableListView>
+    </android.support.v4.widget.SwipeRefreshLayout>
+
 
 </LinearLayout>

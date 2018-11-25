@@ -7,6 +7,7 @@ import android.support.v4.widget.ViewDragHelper.Callback;
 import android.util.AttributeSet;
 import android.view.MotionEvent;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.FrameLayout;
 
 public class SlidingMenu extends FrameLayout {

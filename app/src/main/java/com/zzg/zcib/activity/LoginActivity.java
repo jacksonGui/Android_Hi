@@ -11,6 +11,9 @@ import android.widget.Toast;
 import com.zzg.zcib.hi.R;
 import com.zzg.zcib.utils.MyVolley;
 
+import java.io.UnsupportedEncodingException;
+import java.net.URLEncoder;
+
 import static com.zzg.zcib.utils.MyVolley.IP_;
 
 public class LoginActivity extends AppCompatActivity {
@@ -43,6 +46,11 @@ public class LoginActivity extends AppCompatActivity {
             String username1=username.getText().toString();
             String password1=password.getText().toString();
             if (!"".equals(username1)&&!"".equals(password1)){
+                try {
+                    username1 = URLEncoder.encode(URLEncoder.encode(username1, "utf-8"));
+                } catch (UnsupportedEncodingException e) {
+                    e.printStackTrace();
+                }
                 MyVolley.goVolley("http://"+IP_+":8080/AndroidServiceHi/userServlet?action=login&username=" + username1 + "&password=" + password1,
                         LoginActivity.this, new MyVolley.VolleyCallback() {
                     @Override

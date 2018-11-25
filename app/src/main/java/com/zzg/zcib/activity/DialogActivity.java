@@ -61,6 +61,9 @@ public class DialogActivity extends AppCompatActivity {
         firstCon();
         name.setText(fname);
 
+        recyclerView.scrollToPosition(msgList.size()-1);
+
+
     }
 
 
@@ -95,6 +98,7 @@ public class DialogActivity extends AppCompatActivity {
 //        msgList.add(msg4);
 
         msgList= chatSQLiteUtil.quaryMsg(uid,fid);
+
     }
 
     private void connectSocket(){
@@ -102,6 +106,7 @@ public class DialogActivity extends AppCompatActivity {
         JSONObject jsonObject1=new JSONObject();
         jsonObject1.put("first",false);
         jsonObject1.put("uid",uid);
+        Log.d("ssssssssssss",uid);
         jsonObject1.put("fid",fid);
         jsonObject1.put("msg",editString);
         mySocket=new MySocket(jsonObject1.toString());
@@ -145,8 +150,11 @@ public class DialogActivity extends AppCompatActivity {
                     public void run() {
                         //更新UI
                         JSONObject jsonObject=new JSONObject(s);
+                        Log.d("aaaaaaa",s);
+                        if (jsonObject.getString("from").equals(fid)){
+                            myReceive(jsonObject.getString("msg"));
+                        }
 
-                        myReceive(jsonObject.getString("msg"));
                     }
 
                 });

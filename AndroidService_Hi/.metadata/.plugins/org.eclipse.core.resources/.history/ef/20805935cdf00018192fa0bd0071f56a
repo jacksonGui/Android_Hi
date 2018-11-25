@@ -2,6 +2,8 @@ package servlet;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.io.UnsupportedEncodingException;
+import java.net.URLDecoder;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -43,20 +45,81 @@ public class UserServlet extends HttpServlet {
 			hasUser(request,response);
 		}else if("searchFriends".equals(action)){
 			searchFriends(request,response);
+		}else if("getOneUser".equals(action)){
+			getOneUser(request,response);
+		}else if("addFriendAsk".equals(action)){
+			addFriendAsk(request,response);
+		}
+		else if("addFriendReceive".equals(action)){
+			addFriendReceive(request,response);
+		}else if("getFriendAddList".equals(action)){
+			getFriendAddList(request,response);
 		}
 	}
 	
 	
 
 
-	private void searchFriends(HttpServletRequest request,
+	private void getFriendAddList(HttpServletRequest request,
 			HttpServletResponse response) {
-		String username=request.getParameter("username");
-		JSONArray jsonArray=userService.searchFriends(username);
+		String fid=request.getParameter("fid");
+//		System.out.println("asdasdasd"+fid);
+		JSONArray jsonArray=userService.getAddList(fid);
 		try {
 			response.getWriter().write(jsonArray.toString());
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+	}
+
+
+	private void addFriendReceive(HttpServletRequest request,
+			HttpServletResponse response) {
+		
+		String requestid=request.getParameter("id");
+		String uid=request.getParameter("uid");
+		String fid=request.getParameter("fid");
+
+		
+		userService.addFriendReceive(requestid,uid, fid);
+		
+	}
+
+
+	private void addFriendAsk(HttpServletRequest request,
+			HttpServletResponse response) {
+		String uid=request.getParameter("uid");
+		String fid=request.getParameter("fid");
+		
+		userService.addFriendAsk(uid,fid);
+		
+		
+	}
+
+
+	private void getOneUser(HttpServletRequest request,
+			HttpServletResponse response) {
+		String id=request.getParameter("id");
+		JSONObject jsonObject=userService.getOneUser(id);
+		try {
+			response.getWriter().write(jsonObject.toString());
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+
+
+	private void searchFriends(HttpServletRequest request,
+			HttpServletResponse response) {
+		String username=request.getParameter("username");
+		JSONArray jsonArray=userService.searchFriends(username);
+		System.out.println(jsonArray.toString());
+		try {
+			response.getWriter().write(jsonArray.toString());
+		} catch (IOException e) {
 			e.printStackTrace();
 		}
 		
@@ -86,6 +149,16 @@ public class UserServlet extends HttpServlet {
 	private void register(HttpServletRequest request,
 			HttpServletResponse response) {
 		String username=request.getParameter("username");
+		
+		//解决中文登录乱码
+				try {
+					username=URLDecoder.decode(URLDecoder.decode(username, "UTF-8"));
+				} catch (UnsupportedEncodingException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
+		System.out.println("aaa"+username);
+		
 		String password=request.getParameter("password");
 		String email=request.getParameter("email");
 		String phone=request.getParameter("phone");
@@ -131,6 +204,16 @@ public class UserServlet extends HttpServlet {
 	private void login(HttpServletRequest request, HttpServletResponse response) {
 		
 		String username=request.getParameter("username");
+		
+		//解决中文登录乱码
+		try {
+			username=URLDecoder.decode(username, "UTF-8");
+		} catch (UnsupportedEncodingException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
+
+		
 		String password=request.getParameter("password");
 		User user=userService.login(username,password);
 		JSONObject jsonObject = new JSONObject();  //创建Json对象
@@ -139,6 +222,7 @@ public class UserServlet extends HttpServlet {
 			jsonObject.put("username", user.getUsername());         //设置Json对象的属性
 			jsonObject.put("password", user.getPassword());
 			jsonObject.put("id", user.getId());
+			jsonObject.put("imgurl", user.getImgurl());
 		}
 		
 		

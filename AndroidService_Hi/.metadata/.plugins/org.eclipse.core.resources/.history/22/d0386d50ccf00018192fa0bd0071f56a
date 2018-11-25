@@ -152,7 +152,7 @@ public class UserServlet extends HttpServlet {
 		
 		//解决中文登录乱码
 				try {
-					username=URLDecoder.decode(URLDecoder.decode(username, "UTF-8"));
+					username=URLDecoder.decode(username, "UTF-8");
 				} catch (UnsupportedEncodingException e1) {
 					// TODO Auto-generated catch block
 					e1.printStackTrace();
@@ -207,7 +207,7 @@ public class UserServlet extends HttpServlet {
 		
 		//解决中文登录乱码
 		try {
-			username=URLDecoder.decode(URLDecoder.decode(username, "UTF-8"));
+			username=URLDecoder.decode(username, "UTF-8");
 		} catch (UnsupportedEncodingException e1) {
 			// TODO Auto-generated catch block
 			e1.printStackTrace();

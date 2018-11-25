@@ -40,7 +40,7 @@ public class MySocket extends Thread{
         DataInputStream dis=new DataInputStream(clientSocket.getInputStream());
         while (true){
             String jsonString1=dis.readUTF();
-            Log.d("aaaaaaaa",jsonString1);
+//            Log.d("aaaaaaaa",jsonString1);
 
 
             if (callback!=null){

@@ -149,16 +149,6 @@ public class UserServlet extends HttpServlet {
 	private void register(HttpServletRequest request,
 			HttpServletResponse response) {
 		String username=request.getParameter("username");
-		
-		//解决中文登录乱码
-				try {
-					username=URLDecoder.decode(URLDecoder.decode(username, "UTF-8"));
-				} catch (UnsupportedEncodingException e1) {
-					// TODO Auto-generated catch block
-					e1.printStackTrace();
-				}
-		System.out.println("aaa"+username);
-		
 		String password=request.getParameter("password");
 		String email=request.getParameter("email");
 		String phone=request.getParameter("phone");
@@ -205,14 +195,13 @@ public class UserServlet extends HttpServlet {
 		
 		String username=request.getParameter("username");
 		
-		//解决中文登录乱码
-		try {
-			username=URLDecoder.decode(URLDecoder.decode(username, "UTF-8"));
-		} catch (UnsupportedEncodingException e1) {
-			// TODO Auto-generated catch block
-			e1.printStackTrace();
-		}
-
+//		try {
+//			username=URLDecoder.decode(URLDecoder.decode(username, "UTF-8"));
+			System.out.println("qqqqqqqqqqqq"+username);
+//		} catch (UnsupportedEncodingException e1) {
+//			// TODO Auto-generated catch block
+//			e1.printStackTrace();
+//		}
 		
 		String password=request.getParameter("password");
 		User user=userService.login(username,password);

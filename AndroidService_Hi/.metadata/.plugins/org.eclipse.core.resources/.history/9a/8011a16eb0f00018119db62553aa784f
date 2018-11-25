@@ -28,7 +28,7 @@ public class MySocketT extends Thread {
 				
 				DataInputStream dis=new DataInputStream(clientSocket.getInputStream());
 				String jsonString=dis.readUTF();
-//				System.out.println(jsonString);
+				System.out.println(jsonString);
 				
 //				DataOutputStream dos=new DataOutputStream(clientSocket.getOutputStream());
 //		        dos.writeUTF(jsonString);
@@ -48,12 +48,10 @@ public class MySocketT extends Thread {
                 
                 JSONObject jsonObject=new JSONObject(jsonString);
                 if((Boolean) jsonObject.get("first")){
-                	
+                	System.out.println(jsonObject.getString("uid"));
                 	
                 	socketList.add(new SocketThread(jsonObject.getString("uid"),clientSocket));
                 }else{
-//                	System.out.println("aaaaaaaaaaaaaaaaaaaa"+jsonObject.getString("uid"));
-//                	System.out.println("bbbbbbbbbbbbbbbbbbbbb"+jsonObject.getString("fid"));
                 	msgList=new ArrayList<SocketMsg>();
                 	msgList.add(new SocketMsg(jsonObject.getString("uid"),jsonObject.getString("fid"),jsonObject.getString("msg")));
                 }

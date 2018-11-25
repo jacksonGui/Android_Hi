@@ -8,16 +8,27 @@ public class SocketMsg {
 	
 	private String fid;
 	private String msg;
+	private String uid;
 	
 	
 	
-	public SocketMsg(String fid,String msg){
-
+	public SocketMsg(String uid,String fid,String msg){
+		this.uid=uid;
 		this.fid=fid;
 		this.msg=msg;
 	}
 	
 	
+	public String getUid() {
+		return uid;
+	}
+
+
+	public void setUid(String uid) {
+		this.uid = uid;
+	}
+
+
 	public String getFid() {
 		return fid;
 	}

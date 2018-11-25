@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v4.widget.SwipeRefreshLayout;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -29,7 +30,7 @@ public class FriendsFragment extends Fragment {
     private ExpandableListView friendList;
     private List<FriendsGroup> groupData=new ArrayList<FriendsGroup>();
     private List<List<Friends>> childData=new ArrayList<List<Friends>>();
-
+    private SwipeRefreshLayout swipeRefreshLayout;
     private String id,uImgUrl;
     FriendsListAdapter friendsListAdapter;
     public static FriendsFragment newInstance(String uid,String uImgUrl){
@@ -46,6 +47,7 @@ public class FriendsFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view=inflater.inflate(R.layout.friends_fragment,container,false);
         friendList=view.findViewById(R.id.friends_list);
+        swipeRefreshLayout=view.findViewById(R.id.friends_swipe_refresh);
         id=getArguments().get("uid").toString();
         uImgUrl=getArguments().getString("uImgUrl");
 
@@ -53,17 +55,26 @@ public class FriendsFragment extends Fragment {
         friendsListAdapter=new FriendsListAdapter(getContext(),groupData,childData,id,uImgUrl);
         friendList.setAdapter(friendsListAdapter);
         getNetData();
-
+        swipeRefreshLayout.setOnRefreshListener(new FriendsRefresh());
         return view;
     }
 
-    public void onHiddenChanged(boolean hidden) {
-        super.onHiddenChanged(hidden);
-        if(!hidden){
-            getNetData();
+    private class FriendsRefresh implements SwipeRefreshLayout.OnRefreshListener{
 
+        @Override
+        public void onRefresh() {
+            getNetData();
+            swipeRefreshLayout.setRefreshing(false);
         }
     }
+
+//    public void onHiddenChanged(boolean hidden) {
+//        super.onHiddenChanged(hidden);
+//        if(!hidden){
+//            getNetData();
+//
+//        }
+//    }
 
     private void getNetData(){
         groupData.clear();

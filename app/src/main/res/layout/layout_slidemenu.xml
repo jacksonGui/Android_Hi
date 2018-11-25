@@ -2,7 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
-    android:layout_width="320dp"
+    android:layout_width="330dp"
     android:layout_height="match_parent"
     android:background="#273137">
     <com.zzg.zcib.view.CircleImageView
@@ -14,6 +14,7 @@
         app:civ_border_width="2dp"
         app:civ_border_color="#fff"/>
     <TextView
+        android:id="@+id/slidemenu_username"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="张正光"
@@ -27,15 +28,15 @@
         android:text="资料编辑"
         android:textColor="#fff"
         android:gravity="center"
-        android:textSize="25sp"
-        android:layout_marginTop="50dp"/>
+        android:textSize="20sp"
+        android:layout_marginTop="100dp"/>
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="系统设置"
         android:textColor="#fff"
         android:gravity="center"
-        android:textSize="25sp"
+        android:textSize="20sp"
         android:layout_marginTop="20dp"/>
     <TextView
         android:layout_width="match_parent"
@@ -43,6 +44,6 @@
         android:text="退出登录"
         android:textColor="#fff"
         android:gravity="center"
-        android:textSize="25sp"
+        android:textSize="20sp"
         android:layout_marginTop="20dp"/>
 </LinearLayout>

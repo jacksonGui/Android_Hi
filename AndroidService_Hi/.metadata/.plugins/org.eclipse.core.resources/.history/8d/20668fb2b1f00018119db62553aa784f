@@ -52,8 +52,8 @@ public class MySocketT extends Thread {
                 	
                 	socketList.add(new SocketThread(jsonObject.getString("uid"),clientSocket));
                 }else{
-//                	System.out.println("aaaaaaaaaaaaaaaaaaaa"+jsonObject.getString("uid"));
-//                	System.out.println("bbbbbbbbbbbbbbbbbbbbb"+jsonObject.getString("fid"));
+                	System.out.println("aaaaaaaaaaaaaaaaaaaa"+jsonObject.getString("uid"));
+                	System.out.println("bbbbbbbbbbbbbbbbbbbbb"+jsonObject.getString("fid"));
                 	msgList=new ArrayList<SocketMsg>();
                 	msgList.add(new SocketMsg(jsonObject.getString("uid"),jsonObject.getString("fid"),jsonObject.getString("msg")));
                 }

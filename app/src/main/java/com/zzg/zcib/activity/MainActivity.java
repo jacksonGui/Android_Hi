@@ -38,7 +38,7 @@ import static com.zzg.zcib.utils.MyVolley.IP_;
 
 
 public class MainActivity extends AppCompatActivity {
-    private TextView titleText;
+    private TextView titleText,slideUsername;
     private Button more,btnAdd,btnReceive;
     private RadioGroup radioGroup;
     private RadioButton newsBtn;
@@ -62,12 +62,13 @@ public class MainActivity extends AppCompatActivity {
         radioGroup=findViewById(R.id.bottom_bar);
         titleText=findViewById(R.id.title_text);
         more=findViewById(R.id.more);
+        slideUsername=findViewById(R.id.slidemenu_username);
         radioGroup.setOnCheckedChangeListener(new OnChange());
         newsBtn=findViewById(R.id.news_btn);
         slidingMenu=findViewById(R.id.sliding_menu);
         String userJson=getIntent().getExtras().get("user").toString();
         jsonObject=JSONObject.fromObject(userJson);
-
+        slideUsername.setText(jsonObject.getString("username"));
         more.setOnClickListener(new MoreClick());
         MyVolley.imageVolley("http://"+IP_+":8080/AndroidServiceHi/"+jsonObject.getString("imgurl"), MainActivity.this, new MyVolley.ImgCallBack() {
             @Override
@@ -84,6 +85,7 @@ public class MainActivity extends AppCompatActivity {
         img.setOnClickListener(new UserImgClick());
         newsBtn.setChecked(true);
 
+        menuImg.setOnClickListener(new SlideImgClick());
 
     }
 
@@ -113,11 +115,19 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-//            Intent intent =new Intent(MainActivity.this,PersonActivity.class);
-//            intent.putExtra("fid",Integer.parseInt(jsonObject.getString("id")));
-//            intent.putExtra("userid",jsonObject.getString("id"));
-//            intent.putExtra("personType","myself");
-//            startActivity(intent);
+
+        }
+    }
+
+    private class SlideImgClick implements View.OnClickListener{
+
+        @Override
+        public void onClick(View v) {
+            Intent intent =new Intent(MainActivity.this,PersonActivity.class);
+            intent.putExtra("fid",Integer.parseInt(jsonObject.getString("id")));
+            intent.putExtra("userid",jsonObject.getString("id"));
+            intent.putExtra("personType","myself");
+            startActivity(intent);
         }
     }
 

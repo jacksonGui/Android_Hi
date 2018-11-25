@@ -53,7 +53,6 @@ public class MySocketThread extends Thread {
 //								PrintWriter out=new PrintWriter(threadList.get(j).getSocket().getOutputStream());
 								JSONObject jsonObject=new JSONObject();
 								jsonObject.put("from", msgList.get(i).getUid());
-//								System.out.println("cccccccccccccccc"+msgList.get(i).getUid());
 								jsonObject.put("msg", msgList.get(i).getMsg());
 //								out.println(jsonObject.toString());
 //								out.flush();

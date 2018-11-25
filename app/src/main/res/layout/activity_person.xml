@@ -19,19 +19,19 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/person_img"
-        android:text="南昌"/>
+/>
     <TextView
         android:id="@+id/person_email"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/person_name"
-        android:text="123456@qq.com"/>
+/>
     <TextView
         android:id="@+id/person_phone"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/person_email"
-        android:text="123456789"/>
+/>
     <Button
         android:id="@+id/btn_person_add"
         android:layout_width="match_parent"

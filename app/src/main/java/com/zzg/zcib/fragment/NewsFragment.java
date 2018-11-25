@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v4.widget.SwipeRefreshLayout;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -32,6 +33,7 @@ public class NewsFragment extends Fragment {
     private ChatSQLiteUtil chatSQLiteUtil;
     private String userid;
     private NewsListAdapter newsListAdapter;
+    private SwipeRefreshLayout swipeRefreshLayout;
 
     public static NewsFragment newInstance(String uid,String uImgUrl){
         NewsFragment newsFragment=new NewsFragment();
@@ -48,6 +50,7 @@ public class NewsFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view=inflater.inflate(R.layout.news_fragment,container,false);
         newsList=view.findViewById(R.id.news_list);
+        swipeRefreshLayout=view.findViewById(R.id.news_swipe_refresh);
         userid=getArguments().get("uid").toString();
         initData();
 
@@ -55,8 +58,19 @@ public class NewsFragment extends Fragment {
         newsListAdapter=new NewsListAdapter(getContext(),data);
         newsList.setAdapter(newsListAdapter);
         newsList.setOnItemClickListener(new OnItemClick());
-
+        swipeRefreshLayout.setOnRefreshListener(new NewsRefresh());
         return view;
+    }
+
+    private class NewsRefresh implements SwipeRefreshLayout.OnRefreshListener{
+
+        @Override
+        public void onRefresh() {
+
+            initData();
+            newsListAdapter.notifyDataSetChanged();
+            swipeRefreshLayout.setRefreshing(false);
+        }
     }
 
     @Override

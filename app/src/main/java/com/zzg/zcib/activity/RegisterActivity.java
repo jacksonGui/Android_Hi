@@ -3,9 +3,7 @@ package com.zzg.zcib.activity;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
-import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -13,7 +11,8 @@ import android.widget.Toast;
 import com.zzg.zcib.hi.R;
 import com.zzg.zcib.utils.MyVolley;
 
-import org.json.JSONObject;
+import java.io.UnsupportedEncodingException;
+import java.net.URLEncoder;
 
 import static com.zzg.zcib.utils.MyVolley.IP_;
 
@@ -56,7 +55,13 @@ public class RegisterActivity extends AppCompatActivity {
                 Toast.makeText(RegisterActivity.this,"两次密码输入不相同！",Toast.LENGTH_SHORT).show();
 
             }else{
-                String url="http://"+IP_+":8080/AndroidServiceHi/userServlet?action=register&username="+regiUsername.getText()+"&password="+regiPassword1.getText()+"&email="+regiEmail.getText()+"&phone="+regiPhone.getText();
+                String username1=regiUsername.getText().toString();
+                try {
+                    username1 = URLEncoder.encode(URLEncoder.encode(username1, "utf-8"));
+                } catch (UnsupportedEncodingException e) {
+                    e.printStackTrace();
+                }
+                String url="http://"+IP_+":8080/AndroidServiceHi/userServlet?action=register&username="+username1+"&password="+regiPassword1.getText()+"&email="+regiEmail.getText()+"&phone="+regiPhone.getText();
                 MyVolley.goVolley(url, RegisterActivity.this, new MyVolley.VolleyCallback() {
                     @Override
                     public void onSuccess(String s) {
@@ -112,5 +117,6 @@ public class RegisterActivity extends AppCompatActivity {
         startActivity(intent);
 
     }
+
 
 }
