@@ -1,11 +1,18 @@
 package com.zzg.zcib.activity;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
+import android.net.Uri;
+import android.os.Build;
+import android.os.Environment;
+import android.provider.MediaStore;
 import android.support.v4.app.FragmentTransaction;
+import android.support.v4.app.NotificationCompat;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -34,6 +41,8 @@ import com.zzg.zcib.view.SlidingMenu;
 
 import net.sf.json.JSONObject;
 
+import java.io.File;
+
 import static com.zzg.zcib.utils.MyVolley.IP_;
 
 
@@ -56,6 +65,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
 
         img=findViewById(R.id.user_img);
         menuImg=findViewById(R.id.slidemenu_img);
@@ -110,14 +120,10 @@ public class MainActivity extends AppCompatActivity {
         @Override
         public void onClick(View v) {
             slidingMenu.toggle();
-
-
-
-
-
-
         }
     }
+
+
 
     private class SlideImgClick implements View.OnClickListener{
 

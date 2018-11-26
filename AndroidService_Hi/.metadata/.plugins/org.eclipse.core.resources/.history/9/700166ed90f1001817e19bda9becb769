@@ -1,23 +1,14 @@
 package servlet;
 
-import java.io.File;
-import java.io.FileOutputStream;
 import java.io.IOException;
-import java.io.InputStream;
-import java.io.OutputStream;
 import java.io.PrintWriter;
 import java.io.UnsupportedEncodingException;
 import java.net.URLDecoder;
-import java.util.List;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
-import org.apache.commons.fileupload.FileItem;
-import org.apache.commons.fileupload.disk.DiskFileItemFactory;
-import org.apache.commons.fileupload.servlet.ServletFileUpload;
 
 import entity.User;
 
@@ -76,7 +67,7 @@ public class UserServlet extends HttpServlet {
         //获得磁盘文件条目工厂。  
         DiskFileItemFactory factory = new DiskFileItemFactory();  
         //获取文件上传需要保存的路径，upload文件夹需存在。  
-        String path = request.getSession().getServletContext().getRealPath("/imgs");  
+        String path = request.getSession().getServletContext().getRealPath("/upload");  
         //设置暂时存放文件的存储室，这个存储室可以和最终存储文件的文件夹不同。因为当文件很大的话会占用过多内存所以设置存储室。  
         factory.setRepository(new File(path));  
         //设置缓存的大小，当上传文件的容量超过缓存时，就放到暂时存储室。  
@@ -232,14 +223,12 @@ public class UserServlet extends HttpServlet {
 		String password=request.getParameter("password");
 		String email=request.getParameter("email");
 		String phone=request.getParameter("phone");
-		String imgurl=request.getParameter("imgurl");
 		
 		User user=new User();
 		user.setUsername(username);
 		user.setPassword(password);
 		user.setEmail(email);
 		user.setPhone(phone);
-		user.setImgurl(imgurl);
 		boolean flag= userService.register(user);
 		try {
 			if(flag){

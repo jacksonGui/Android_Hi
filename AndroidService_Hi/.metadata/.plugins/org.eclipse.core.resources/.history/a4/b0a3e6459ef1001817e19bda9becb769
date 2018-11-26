@@ -18,7 +18,7 @@ public class UserDao {
 			user.setUsername((String)list.get(0).get("username"));
 			user.setPassword((String)list.get(0).get("password"));
 			user.setId((Integer)list.get(0).get("id"));
-			user.setImgurl((String)list.get(0).get("imgurl"));
+			user.setImgurl(list.get(0).get("imgurl").toString());
 		}
 		return user;
 	}
@@ -34,9 +34,9 @@ public class UserDao {
 	}
 
 	public int insertUser(User user) {
-		String sql="insert into user(username,password,email,phone,imgurl) value(?,?,?,?,?)";
+		String sql="insert into user(username,password,email,phone) value(?,?,?,?)";
 		Object[] params={
-				user.getUsername(),user.getPassword(),user.getEmail(),user.getPhone(),user.getImgurl()
+				user.getUsername(),user.getPassword(),user.getEmail(),user.getPhone()
 		};
 		return DBUtils.update(sql, params);
 	}

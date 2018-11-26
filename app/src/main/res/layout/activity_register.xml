@@ -6,6 +6,14 @@
     android:layout_height="match_parent"
     tools:context="com.zzg.zcib.activity.RegisterActivity"
     android:orientation="vertical">
+    <com.zzg.zcib.view.CircleImageView
+        android:id="@+id/img_register"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_margin="5dp"
+        app:civ_border_width="2dp"
+        app:civ_border_color="#fff"
+        android:src="@mipmap/ic_launcher"/>
     <EditText
         android:id="@+id/regi_username"
         android:layout_width="match_parent"

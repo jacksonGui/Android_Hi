@@ -18,7 +18,7 @@ public class UserDao {
 			user.setUsername((String)list.get(0).get("username"));
 			user.setPassword((String)list.get(0).get("password"));
 			user.setId((Integer)list.get(0).get("id"));
-			user.setImgurl((String)list.get(0).get("imgurl"));
+			user.setImgurl(list.get(0).get("imgurl").toString());
 		}
 		return user;
 	}
