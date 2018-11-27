@@ -32,6 +32,11 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/person_email"
 />
+    <EditText
+        android:id="@+id/person_group"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/person_phone" />
     <Button
         android:id="@+id/btn_person_add"
         android:layout_width="match_parent"

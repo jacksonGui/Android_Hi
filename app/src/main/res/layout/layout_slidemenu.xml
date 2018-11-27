@@ -23,6 +23,7 @@
         android:textSize="30sp"
         android:layout_marginTop="20dp"/>
     <TextView
+        android:id="@+id/slide_edit_info"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="资料编辑"

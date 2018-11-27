@@ -47,7 +47,7 @@ import static com.zzg.zcib.utils.MyVolley.IP_;
 
 
 public class MainActivity extends AppCompatActivity {
-    private TextView titleText,slideUsername;
+    private TextView titleText,slideUsername,slideEditInfo;
     private Button more,btnAdd,btnReceive;
     private RadioGroup radioGroup;
     private RadioButton newsBtn;
@@ -73,6 +73,7 @@ public class MainActivity extends AppCompatActivity {
         titleText=findViewById(R.id.title_text);
         more=findViewById(R.id.more);
         slideUsername=findViewById(R.id.slidemenu_username);
+        slideEditInfo=findViewById(R.id.slide_edit_info);
         radioGroup.setOnCheckedChangeListener(new OnChange());
         newsBtn=findViewById(R.id.news_btn);
         slidingMenu=findViewById(R.id.sliding_menu);
@@ -96,7 +97,20 @@ public class MainActivity extends AppCompatActivity {
         newsBtn.setChecked(true);
 
         menuImg.setOnClickListener(new SlideImgClick());
+        slideEditInfo.setOnClickListener(new SlideEditInfoClick());
 
+
+    }
+
+
+    private class SlideEditInfoClick implements View.OnClickListener{
+
+        @Override
+        public void onClick(View v) {
+            Intent intent =new Intent(MainActivity.this,EditPersonActivity.class);
+            intent.putExtra("userid",jsonObject.getString("id"));
+            startActivity(intent);
+        }
     }
 
     private class MoreClick implements View.OnClickListener{
@@ -196,7 +210,7 @@ public class MainActivity extends AppCompatActivity {
                     break;
                 case R.id.other_btn:
                     if (otherFragment==null){
-                        otherFragment=new OtherFragment();
+                        otherFragment=OtherFragment.newInstance(jsonObject.getString("id"),jsonObject.getString("imgurl"));
                         fragmentTransaction.add(R.id.main_content,otherFragment);
                     }else {
                         fragmentTransaction.show(otherFragment);

@@ -64,10 +64,144 @@ public class UserServlet extends HttpServlet {
 			getFriendAddList(request,response);
 		}else if("uploadImg".equals(action)){
 			uploadImg(request,response);
+		}else if("getMyInfo".equals(action)){
+			getMyInfo(request,response);
+		}else if("updateMyInfo".equals(action)){
+			updateMyInfo(request,response);
+		}else if("getOther".equals(action)){
+			getOther(request,response);
+		}else if("addOther".equals(action)){
+			addOther(request,response);
+		}else if("getFriendGroup".equals(action)){
+			getFriendGroup(request,response);
+		}else if("updateFriendGroup".equals(action)){
+			updateFriendGroup(request,response);
 		}
 	}
 	
 	
+
+
+	private void updateFriendGroup(HttpServletRequest request,
+			HttpServletResponse response) {
+		String fid=request.getParameter("fid");
+		String uid=request.getParameter("uid");
+		String fgroup=request.getParameter("fgroup");
+		
+		//解决中文登录乱码
+				try {
+					fgroup=URLDecoder.decode(URLDecoder.decode(fgroup, "UTF-8"));
+				} catch (UnsupportedEncodingException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
+		
+		userService.updateGroup(uid,fid,fgroup);
+		
+	}
+
+
+	private void getFriendGroup(HttpServletRequest request,
+			HttpServletResponse response) {
+		String fid=request.getParameter("fid");
+		String uid=request.getParameter("uid");
+		String group=userService.getGroup(uid,fid);
+		try {
+			response.getWriter().write(group);
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+	}
+
+
+	private void addOther(HttpServletRequest request,
+			HttpServletResponse response) {
+		String id=request.getParameter("id");
+		String content=request.getParameter("content");
+		//解决中文登录乱码
+		try {
+			content=URLDecoder.decode(URLDecoder.decode(content, "UTF-8"));
+		} catch (UnsupportedEncodingException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
+		String time=request.getParameter("time");
+		userService.addOther(id,content, time);
+	}
+
+
+	private void getOther(HttpServletRequest request,
+			HttpServletResponse response) {
+		String id=request.getParameter("id");
+		JSONArray jsonArray=userService.getOtherList(id);
+		try {
+			response.getWriter().write(jsonArray.toString());
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+	}
+
+
+	private void updateMyInfo(HttpServletRequest request,
+			HttpServletResponse response) {
+		String id=request.getParameter("id");
+		String username=request.getParameter("username");
+		
+		//解决中文登录乱码
+				try {
+					username=URLDecoder.decode(URLDecoder.decode(username, "UTF-8"));
+				} catch (UnsupportedEncodingException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
+		
+		String password=request.getParameter("password");
+		String email=request.getParameter("email");
+		String phone=request.getParameter("phone");
+		String imgurl=request.getParameter("imgurl");
+		
+		User user=new User();
+		user.setId(Integer.parseInt(id));
+		user.setUsername(username);
+		user.setPassword(password);
+		user.setEmail(email);
+		user.setPhone(phone);
+		user.setImgurl(imgurl);
+		
+		boolean flag= userService.updateMyInfo(user);
+		try {
+			if(flag){
+				
+				response.getWriter().write("y");
+				
+			}else{
+				response.getWriter().write("n");
+			}
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		
+	}
+
+
+	private void getMyInfo(HttpServletRequest request,
+			HttpServletResponse response) {
+		String id=request.getParameter("id");
+		JSONObject jsonObject=userService.getMyInfo(id);
+		try {
+			response.getWriter().write(jsonObject.toString());
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+	}
 
 
 	private void uploadImg(HttpServletRequest request,

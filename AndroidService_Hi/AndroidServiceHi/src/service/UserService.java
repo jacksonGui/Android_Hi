@@ -52,6 +52,8 @@ public class UserService {
 		int count=userDao.insertUser(user);
 		if(count!=0){
 			flag=true;
+			Integer id=userDao.findByUsername(user.getUsername()).getId();
+			userDao.insertSelf(id);
 		}
 		return flag;
 	}
@@ -115,6 +117,46 @@ public class UserService {
 		
 		
 		return jsonArray;
+	}
+
+	public JSONObject getMyInfo(String id) {
+		List<Map<String,Object>> list=userDao.findMyInfoById(id);
+		JSONObject jsonObject=new JSONObject(list.get(0));
+		
+		return jsonObject;
+	}
+
+	public boolean updateMyInfo(User user) {
+		boolean flag=false;
+		int count=userDao.updateInfo(user);
+		if(count!=0){
+			flag=true;
+		}
+		return flag;
+	}
+
+	public JSONArray getOtherList(String id) {
+		JSONArray jsonArray=new JSONArray();
+		List<Map<String,Object>> list=userDao.findOtherById(id);
+		for(int i=0;i<list.size();i++){
+			jsonArray.put(list.get(i));
+			
+		}
+		return jsonArray;
+	}
+
+	public void addOther(String id, String content, String time) {
+		userDao.insertOther(id,content,time);
+		
+	}
+
+	public String getGroup(String uid,String fid) {
+		List<Map<String,Object>> list=userDao.findGroupById(uid,fid);
+		return list.get(0).get("fgroup").toString();
+	}
+
+	public void updateGroup(String uid, String fid, String fgroup) {
+		userDao.updateGroup(uid,fid,fgroup);
 	}
 
 }

@@ -69,19 +69,19 @@
 </editor>
 <editor activePart="true" focus="true" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="UserServlet.java" partName="UserServlet.java" path="D:/MyAndroid_Hi/AndroidService_Hi/AndroidServiceHi/src/servlet/UserServlet.java" title="UserServlet.java" tooltip="AndroidServiceHi/src/servlet/UserServlet.java" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/AndroidServiceHi/src/servlet/UserServlet.java"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="7502" selectionTopPixel="2850"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="4518" selectionTopPixel="1455"/>
 </editor>
 <editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="UserService.java" partName="UserService.java" path="D:/MyAndroid_Hi/AndroidService_Hi/AndroidServiceHi/src/service/UserService.java" title="UserService.java" tooltip="AndroidServiceHi/src/service/UserService.java" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/AndroidServiceHi/src/service/UserService.java"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="1570" selectionTopPixel="510"/>
+<editorState selectionHorizontalPixel="0" selectionLength="11" selectionOffset="4261" selectionTopPixel="1734"/>
 </editor>
 <editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="UserDao.java" partName="UserDao.java" path="D:/MyAndroid_Hi/AndroidService_Hi/AndroidServiceHi/src/dao/UserDao.java" title="UserDao.java" tooltip="AndroidServiceHi/src/dao/UserDao.java" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/AndroidServiceHi/src/dao/UserDao.java"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="952" selectionTopPixel="45"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="4034" selectionTopPixel="219"/>
 </editor>
 <editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="User.java" partName="User.java" path="D:/MyAndroid_Hi/AndroidService_Hi/AndroidServiceHi/src/entity/User.java" title="User.java" tooltip="AndroidServiceHi/src/entity/User.java" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/AndroidServiceHi/src/entity/User.java"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="314" selectionTopPixel="30"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="53" selectionTopPixel="0"/>
 </editor>
 <editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="DBUtils.java" partName="DBUtils.java" path="D:/MyAndroid/MyAndroid_Hi/AndroidService_Hi/AndroidServiceHi/src/utils/DBUtils.java" title="DBUtils.java" tooltip="AndroidServiceHi/src/utils/DBUtils.java" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/AndroidServiceHi/src/utils/DBUtils.java"/>
@@ -154,8 +154,7 @@
 <view id="org.eclipse.ui.views.ProblemView" partName="Problems">
 <viewState PRIMARY_SORT_FIELD="org.eclipse.ui.ide.severityAndDescriptionField" categoryGroup="org.eclipse.ui.ide.severity" markerContentGenerator="org.eclipse.ui.ide.problemsGenerator" partName="Problems">
 <expanded>
-<category IMemento.internal.id="Warnings (19 items)"/>
-<category IMemento.internal.id="Errors"/>
+<category IMemento.internal.id="Warnings"/>
 </expanded>
 <columnWidths org.eclipse.ui.ide.locationField="90" org.eclipse.ui.ide.markerType="90" org.eclipse.ui.ide.pathField="120" org.eclipse.ui.ide.resourceField="90" org.eclipse.ui.ide.severityAndDescriptionField="300"/>
 <visible IMemento.internal.id="org.eclipse.ui.ide.severityAndDescriptionField"/>
@@ -344,7 +343,7 @@
 </presentation>
 </folder>
 </info>
-<info folder="true" part="bottom" ratio="0.6143931" ratioLeft="572" ratioRight="359" relationship="4" relative="org.eclipse.ui.editorss">
+<info folder="true" part="bottom" ratio="0.71643394" ratioLeft="667" ratioRight="264" relationship="4" relative="org.eclipse.ui.editorss">
 <folder activePageID="org.eclipse.ui.console.ConsoleView" appearance="2" expanded="2">
 <page content="org.eclipse.ui.views.ProblemView" label="Problems"/>
 <page content="org.eclipse.ui.views.TaskList" label="Tasks"/>
@@ -686,169 +685,160 @@
 <workingSets/>
 <navigationHistory>
 <editors>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/AndroidServiceHi/src/socket/MySocketT.java"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/AndroidServiceHi/src/socket/MySocketThread.java"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/AndroidServiceHi/src/socket/MySocketT.java"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/AndroidServiceHi/src/entity/SocketThread.java"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/AndroidServiceHi/src/socket/MySocketServ.java"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/AndroidServiceHi/src/entity/SocketMsg.java"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/AndroidServiceHi/src/dao/UserDao.java"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/AndroidServiceHi/src/servlet/UserServlet.java"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/AndroidServiceHi/src/dao/UserDao.java"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/AndroidServiceHi/src/dao/UserDao.java"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/AndroidServiceHi/src/servlet/UserServlet.java"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/AndroidServiceHi/src/entity/User.java"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/AndroidServiceHi/src/service/UserService.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/AndroidServiceHi/src/servlet/UserServlet.java"/>
 </editors>
-<item historyLabel="MySocketT.java" index="0">
-<position info="not_deleted" x="2004" y="0"/>
+<item historyLabel="UserServlet.java" index="1">
+<position info="not_deleted" x="10549" y="0"/>
 </item>
-<item historyLabel="MySocketThread.java" index="1">
-<position info="not_deleted" x="488" y="14"/>
+<item historyLabel="UserService.java" index="2">
+<position info="not_deleted" x="1572" y="0"/>
 </item>
-<item historyLabel="MySocketT.java" index="2">
-<position info="not_deleted" x="2143" y="0"/>
-</item>
-<item historyLabel="SocketThread.java" index="3">
-<position info="not_deleted" x="410" y="0"/>
-</item>
-<item historyLabel="MySocketServ.java" index="4">
-<position info="not_deleted" x="177" y="0"/>
-</item>
-<item historyLabel="SocketMsg.java" index="5">
-<position info="not_deleted" x="80" y="0"/>
-</item>
-<item historyLabel="MySocketThread.java" index="1">
-<position info="not_deleted" x="1505" y="0"/>
-</item>
-<item historyLabel="MySocketT.java" index="2">
-<position info="not_deleted" x="1734" y="71"/>
-</item>
-<item historyLabel="MySocketThread.java" index="1">
-<position info="not_deleted" x="1462" y="0"/>
-</item>
-<item historyLabel="MySocketT.java" index="2">
-<position info="not_deleted" x="1346" y="0"/>
-</item>
-<item historyLabel="SocketMsg.java" index="5">
-<position info="not_deleted" x="80" y="0"/>
-</item>
-<item historyLabel="MySocketThread.java" index="1">
-<position info="not_deleted" x="1462" y="0"/>
-</item>
-<item historyLabel="UserDao.java" index="6">
-<position info="not_deleted" x="1061" y="0"/>
-</item>
-<item historyLabel="UserServlet.java" index="7">
-<position info="not_deleted" x="4662" y="0"/>
-</item>
-<item historyLabel="UserServlet.java" index="7">
-<position/>
-</item>
-<item historyLabel="UserDao.java" index="8">
-<position info="not_deleted" x="1006" y="0"/>
-</item>
-<item historyLabel="UserDao.java" index="8">
-<position info="not_deleted" x="835" y="0"/>
-</item>
-<item historyLabel="UserServlet.java" index="7">
-<position/>
-</item>
-<item historyLabel="UserServlet.java" index="7">
-<position info="not_deleted" x="5086" y="0"/>
-</item>
-<item historyLabel="UserServlet.java" index="7">
-<position/>
-</item>
-<item historyLabel="UserServlet.java" index="7">
-<position info="not_deleted" x="4231" y="0"/>
-</item>
-<item historyLabel="UserDao.java" index="9">
-<position info="not_deleted" x="835" y="0"/>
-</item>
-<item historyLabel="UserServlet.java" index="10">
-<position info="not_deleted" x="8311" y="0"/>
-</item>
-<item historyLabel="UserServlet.java" index="10">
-<position info="not_deleted" x="2103" y="0"/>
-</item>
-<item historyLabel="UserServlet.java" index="10">
-<position info="not_deleted" x="2075" y="9"/>
-</item>
-<item historyLabel="UserServlet.java" index="10">
-<position info="not_deleted" x="2304" y="1"/>
-</item>
-<item historyLabel="UserServlet.java" index="10">
-<position info="not_deleted" x="2326" y="19"/>
-</item>
-<item historyLabel="UserServlet.java" index="10">
-<position info="not_deleted" x="2292" y="19"/>
-</item>
-<item historyLabel="UserServlet.java" index="10">
-<position info="not_deleted" x="2499" y="0"/>
-</item>
-<item historyLabel="UserServlet.java" index="10">
-<position info="not_deleted" x="2587" y="4"/>
-</item>
-<item historyLabel="UserServlet.java" index="10">
-<position info="not_deleted" x="2769" y="17"/>
-</item>
-<item historyLabel="UserServlet.java" index="10">
-<position info="not_deleted" x="2909" y="4"/>
-</item>
-<item historyLabel="UserServlet.java" index="10">
-<position info="not_deleted" x="2914" y="8"/>
-</item>
-<item historyLabel="UserServlet.java" index="10">
-<position info="not_deleted" x="4003" y="16"/>
-</item>
-<item historyLabel="UserServlet.java" index="10">
-<position info="not_deleted" x="3980" y="12"/>
-</item>
-<item historyLabel="UserServlet.java" index="10">
-<position info="not_deleted" x="4069" y="11"/>
-</item>
-<item historyLabel="UserServlet.java" index="10">
-<position info="not_deleted" x="1523" y="0"/>
-</item>
-<item historyLabel="UserServlet.java" index="10">
-<position info="not_deleted" x="6744" y="8"/>
-</item>
-<item historyLabel="User.java" index="11">
-<position info="not_deleted" x="187" y="0"/>
-</item>
-<item historyLabel="UserServlet.java" index="10">
-<position info="not_deleted" x="7502" y="0"/>
-</item>
-<item historyLabel="UserServlet.java" index="10">
-<position info="not_deleted" x="7500" y="0"/>
-</item>
-<item historyLabel="UserService.java" index="12">
-<position info="not_deleted" x="527" y="0"/>
-</item>
-<item historyLabel="UserServlet.java" index="10">
-<position info="not_deleted" x="7537" y="0"/>
-</item>
-<item historyLabel="UserService.java" index="12">
-<position info="not_deleted" x="1570" y="0"/>
-</item>
-<item historyLabel="UserDao.java" index="9">
+<item historyLabel="UserDao.java" index="0">
 <position info="not_deleted" x="1078" y="10"/>
 </item>
-<item historyLabel="UserDao.java" index="9">
-<position info="not_deleted" x="1348" y="0"/>
+<item historyLabel="UserDao.java" index="0">
+<position/>
 </item>
-<item historyLabel="UserDao.java" index="9">
-<position info="not_deleted" x="230" y="0"/>
+<item historyLabel="UserService.java" index="2">
+<position info="not_deleted" x="1617" y="65"/>
 </item>
-<item historyLabel="User.java" index="11">
-<position info="not_deleted" x="314" y="0"/>
+<item historyLabel="UserDao.java" index="0">
+<position info="not_deleted" x="1194" y="0"/>
 </item>
-<item historyLabel="UserDao.java" index="9">
-<position info="not_deleted" x="952" y="0"/>
+<item historyLabel="UserService.java" index="2">
+<position info="not_deleted" x="1682" y="0"/>
 </item>
-<item active="true" historyLabel="UserServlet.java" index="10">
-<position info="not_deleted" x="7537" y="0"/>
+<item historyLabel="UserDao.java" index="0">
+<position info="not_deleted" x="1355" y="0"/>
+</item>
+<item historyLabel="UserService.java" index="2">
+<position info="not_deleted" x="1682" y="0"/>
+</item>
+<item historyLabel="UserService.java" index="2">
+<position info="not_deleted" x="1708" y="0"/>
+</item>
+<item historyLabel="UserService.java" index="2">
+<position info="not_deleted" x="1695" y="10"/>
+</item>
+<item historyLabel="UserDao.java" index="0">
+<position info="not_deleted" x="3894" y="6"/>
+</item>
+<item historyLabel="UserDao.java" index="0">
+<position info="not_deleted" x="3885" y="0"/>
+</item>
+<item historyLabel="UserServlet.java" index="1">
+<position info="not_deleted" x="10549" y="0"/>
+</item>
+<item historyLabel="UserServlet.java" index="1">
+<position info="not_deleted" x="2452" y="14"/>
+</item>
+<item historyLabel="UserServlet.java" index="1">
+<position/>
+</item>
+<item historyLabel="UserServlet.java" index="1">
+<position/>
+</item>
+<item historyLabel="UserService.java" index="2">
+<position info="not_deleted" x="1737" y="0"/>
+</item>
+<item historyLabel="UserServlet.java" index="1">
+<position info="not_deleted" x="2727" y="0"/>
+</item>
+<item historyLabel="UserServlet.java" index="1">
+<position info="not_deleted" x="3091" y="8"/>
+</item>
+<item historyLabel="UserService.java" index="2">
+<position info="not_deleted" x="4016" y="6"/>
+</item>
+<item historyLabel="UserService.java" index="2">
+<position info="not_deleted" x="4149" y="0"/>
+</item>
+<item historyLabel="UserService.java" index="2">
+<position info="not_deleted" x="4175" y="0"/>
+</item>
+<item historyLabel="UserService.java" index="2">
+<position info="not_deleted" x="4105" y="13"/>
+</item>
+<item historyLabel="UserDao.java" index="0">
+<position info="not_deleted" x="4223" y="0"/>
+</item>
+<item historyLabel="UserService.java" index="2">
+<position info="not_deleted" x="784" y="80"/>
+</item>
+<item historyLabel="UserService.java" index="2">
+<position info="not_deleted" x="1254" y="0"/>
+</item>
+<item historyLabel="UserService.java" index="2">
+<position info="not_deleted" x="784" y="80"/>
+</item>
+<item historyLabel="UserService.java" index="2">
+<position info="not_deleted" x="4293" y="0"/>
+</item>
+<item historyLabel="UserServlet.java" index="1">
+<position info="not_deleted" x="3118" y="0"/>
+</item>
+<item historyLabel="UserService.java" index="2">
+<position info="not_deleted" x="4114" y="0"/>
+</item>
+<item historyLabel="UserDao.java" index="0">
+<position info="not_deleted" x="4221" y="0"/>
+</item>
+<item historyLabel="UserService.java" index="2">
+<position info="not_deleted" x="4130" y="46"/>
+</item>
+<item historyLabel="UserServlet.java" index="1">
+<position info="not_deleted" x="3118" y="0"/>
+</item>
+<item historyLabel="UserServlet.java" index="1">
+<position info="not_deleted" x="2539" y="17"/>
+</item>
+<item historyLabel="UserServlet.java" index="1">
+<position info="not_deleted" x="2868" y="0"/>
+</item>
+<item historyLabel="UserServlet.java" index="1">
+<position info="not_deleted" x="2842" y="11"/>
+</item>
+<item historyLabel="UserService.java" index="2">
+<position info="not_deleted" x="4289" y="0"/>
+</item>
+<item historyLabel="UserServlet.java" index="1">
+<position info="not_deleted" x="2830" y="0"/>
+</item>
+<item historyLabel="UserService.java" index="2">
+<position info="not_deleted" x="4289" y="0"/>
+</item>
+<item historyLabel="UserService.java" index="2">
+<position info="not_deleted" x="4287" y="0"/>
+</item>
+<item historyLabel="UserService.java" index="2">
+<position info="not_deleted" x="4261" y="11"/>
+</item>
+<item historyLabel="UserDao.java" index="0">
+<position info="not_deleted" x="4232" y="6"/>
+</item>
+<item historyLabel="UserServlet.java" index="3">
+<position info="not_deleted" x="3056" y="0"/>
+</item>
+<item historyLabel="UserServlet.java" index="3">
+<position info="not_deleted" x="2544" y="0"/>
+</item>
+<item historyLabel="UserServlet.java" index="3">
+<position info="not_deleted" x="2610" y="17"/>
+</item>
+<item historyLabel="UserServlet.java" index="3">
+<position info="not_deleted" x="2376" y="0"/>
+</item>
+<item historyLabel="UserServlet.java" index="3">
+<position info="not_deleted" x="3509" y="8"/>
+</item>
+<item historyLabel="UserServlet.java" index="3">
+<position info="not_deleted" x="2230" y="0"/>
+</item>
+<item active="true" historyLabel="UserServlet.java" index="3">
+<position info="not_deleted" x="4348" y="12"/>
 </item>
 </navigationHistory>
 <input factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/" type="8"/>

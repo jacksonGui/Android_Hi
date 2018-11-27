@@ -30,7 +30,8 @@
         <activity android:name="com.zzg.zcib.activity.AddFriendActivity" />
         <activity android:name="com.zzg.zcib.activity.PersonActivity" />
         <activity android:name="com.zzg.zcib.activity.AddFriendReceiveActivity" />
-        <activity android:name="com.zzg.zcib.activity.EditPersonActivity"></activity>
+        <activity android:name="com.zzg.zcib.activity.EditPersonActivity" />
+        <activity android:name="com.zzg.zcib.activity.AddOtherActivity"></activity>
     </application>
 
 </manifest>

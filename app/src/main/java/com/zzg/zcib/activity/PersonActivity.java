@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -17,6 +18,9 @@ import com.zzg.zcib.utils.MyVolley;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.io.UnsupportedEncodingException;
+import java.net.URLEncoder;
+
 import static com.zzg.zcib.utils.MyVolley.IP_;
 
 public class PersonActivity extends AppCompatActivity {
@@ -26,6 +30,8 @@ public class PersonActivity extends AppCompatActivity {
     private String userid,fImgUrl,uImgUrl;
     private Integer fid;
     private String personType;
+    private EditText personGroup;
+    private String fgroup;
 
 
     @Override
@@ -40,6 +46,7 @@ public class PersonActivity extends AppCompatActivity {
         btnAdd=findViewById(R.id.btn_person_add);
         btnChat=findViewById(R.id.btn_person_chat);
         btnEdit=findViewById(R.id.btn_person_edit);
+        personGroup=findViewById(R.id.person_group);
         userid=getIntent().getExtras().getString("userid");
         fid=getIntent().getExtras().getInt("fid");
         personType=getIntent().getExtras().getString("personType");
@@ -57,15 +64,51 @@ public class PersonActivity extends AppCompatActivity {
             btnEdit.setVisibility(View.VISIBLE);
             btnChat.setVisibility(View.GONE);
             btnAdd.setVisibility(View.GONE);
+            personGroup.setVisibility(View.GONE);
         }else if (personType.equals("friend")){
             btnEdit.setVisibility(View.GONE);
             btnAdd.setVisibility(View.GONE);
             btnChat.setVisibility(View.VISIBLE);
+            personGroup.setVisibility(View.VISIBLE);
+            loadGroup();
         }else if (personType.equals("stranger")){
             btnEdit.setVisibility(View.GONE);
             btnChat.setVisibility(View.GONE);
             btnAdd.setVisibility(View.VISIBLE);
+            personGroup.setVisibility(View.GONE);
         }
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        try {
+            fgroup = URLEncoder.encode(URLEncoder.encode(personGroup.getText().toString(), "utf-8"));
+        } catch (UnsupportedEncodingException e) {
+            e.printStackTrace();
+        }
+        if (personType.equals("friend")){
+            MyVolley.goVolley("http://" + IP_ + ":8080/AndroidServiceHi/userServlet?action=updateFriendGroup&uid="+userid+"&fid=" + fid+"&fgroup="+fgroup, this,
+                    new MyVolley.VolleyCallback() {
+                        @Override
+                        public void onSuccess(String s) {
+
+
+                        }
+                    });
+        }
+    }
+
+    private void loadGroup(){
+        MyVolley.goVolley("http://" + IP_ + ":8080/AndroidServiceHi/userServlet?action=getFriendGroup&uid="+userid+"&fid=" + fid, this,
+                new MyVolley.VolleyCallback() {
+                    @Override
+                    public void onSuccess(String s) {
+                        Log.d("ssssss",s);
+                        personGroup.setText(s);
+
+                    }
+                });
     }
 
     private void initViewData(){
@@ -118,7 +161,7 @@ public class PersonActivity extends AppCompatActivity {
         @Override
         public void onClick(View v) {
             Intent intent =new Intent(PersonActivity.this,EditPersonActivity.class);
-            intent.putExtra("uid",userid);
+            intent.putExtra("userid",userid);
             startActivity(intent);
         }
     }

@@ -1,9 +1,48 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.zzg.zcib.activity.EditPersonActivity">
 
-</android.support.constraint.ConstraintLayout>
+    <com.zzg.zcib.view.CircleImageView
+        android:id="@+id/update_person_img"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_centerHorizontal="true"
+        app:civ_border_width="2dp"
+        app:civ_border_color="#fff"
+        android:src="@mipmap/ic_launcher"
+        android:layout_margin="5dp"/>
+    <EditText
+        android:id="@+id/update_person_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/update_person_img"
+        />
+    <EditText
+        android:id="@+id/update_person_password"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/update_person_name"
+        />
+    <EditText
+        android:id="@+id/update_person_email"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/update_person_password"
+        />
+    <EditText
+        android:id="@+id/update_person_phone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/update_person_email"
+        />
+    <Button
+        android:id="@+id/btn_person_update"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="修改"
+        android:layout_alignParentBottom="true"/>
+</RelativeLayout>

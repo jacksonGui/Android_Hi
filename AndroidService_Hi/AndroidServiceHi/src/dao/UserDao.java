@@ -41,6 +41,7 @@ public class UserDao {
 		return DBUtils.update(sql, params);
 	}
 	
+	
 	public User findByUsername(String username) {
 		User user=null;
 		String sql="select * from user where username=?";
@@ -85,6 +86,50 @@ public class UserDao {
 	public List<Map<String, Object>> findAddListById(String fid) {
 		String sql="select a.id,a.uid,a.fid,a.time,b.username,b.imgurl from add_request as a,user as b where a.fid=? and a.uid=b.id and a.isok=0";
 		return DBUtils.query(sql, fid);
+	}
+
+	public List<Map<String, Object>> findMyInfoById(String id) {
+		String sql="select * from user where id = ?";
+		return DBUtils.query(sql, id);
+	}
+
+	public int updateInfo(User user) {
+		String sql="update user set username=?,password=?,email=?,phone=?,imgurl=? where id=?";
+		Object[] params={
+				user.getUsername(),user.getPassword(),user.getEmail(),user.getPhone(),user.getImgurl(),user.getId()
+		};
+		return DBUtils.update(sql, params);
+	}
+
+	public List<Map<String, Object>> findOtherById(String id) {
+		String sql="select a.username,a.imgurl,b.content,b.time from user as a,moments as b,friends as c where c.fid=b.uid and c.uid=? and a.id=c.fid order by b.time desc";
+		return DBUtils.query(sql, id);
+	}
+
+	public void insertOther(String id, String content, String time) {
+		String sql="insert into moments(uid,content,time) value(?,?,?)";
+		Object params[]={
+				id,content,time
+		};
+		DBUtils.update(sql, params);
+		
+	}
+
+	public void insertSelf(Integer id) {
+		String sql="insert into friends(uid,fid,fgroup) value(?,?,?)";
+		DBUtils.update(sql, id,id,"ÎÒµÄºÃÓÑ");
+		
+	}
+
+	public List<Map<String, Object>> findGroupById(String uid,String fid) {
+		String sql="select fgroup from friends where uid=? and fid=?";
+		return DBUtils.query(sql, uid,fid);
+	}
+
+	public void updateGroup(String uid, String fid, String fgroup) {
+		String sql="update friends set fgroup=? where uid=? and fid=?";
+		DBUtils.update(sql, fgroup,uid,fid);
+		
 	}
 
 }

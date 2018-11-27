@@ -94,7 +94,7 @@ public class RegisterActivity extends AppCompatActivity {
                     //通过uri的方式返回，部分手机uri可能为空
                     if(uri != null){
                         imgname=getFileByUri(uri,RegisterActivity.this).getName();
-                        Log.d("aaaaaaaaaaaaaaasssssss",imgname);
+//                        Log.d("aaaaaaaaaaaaaaasssssss",imgname);
                         try {
                             //通过uri获取到bitmap对象
                             Bitmap bitmap = MediaStore.Images.Media.getBitmap(getContentResolver(), uri);
