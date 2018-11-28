@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Color;
+import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.ColorDrawable;
 import android.net.Uri;
 import android.os.Build;
@@ -15,9 +16,11 @@ import android.support.v4.app.NotificationCompat;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.PopupMenu;
@@ -47,7 +50,7 @@ import static com.zzg.zcib.utils.MyVolley.IP_;
 
 
 public class MainActivity extends AppCompatActivity {
-    private TextView titleText,slideUsername,slideEditInfo;
+    private TextView titleText,slideUsername,slideEditInfo,slideLogout;
     private Button more,btnAdd,btnReceive;
     private RadioGroup radioGroup;
     private RadioButton newsBtn;
@@ -74,6 +77,7 @@ public class MainActivity extends AppCompatActivity {
         more=findViewById(R.id.more);
         slideUsername=findViewById(R.id.slidemenu_username);
         slideEditInfo=findViewById(R.id.slide_edit_info);
+        slideLogout=findViewById(R.id.logout);
         radioGroup.setOnCheckedChangeListener(new OnChange());
         newsBtn=findViewById(R.id.news_btn);
         slidingMenu=findViewById(R.id.sliding_menu);
@@ -99,7 +103,13 @@ public class MainActivity extends AppCompatActivity {
         menuImg.setOnClickListener(new SlideImgClick());
         slideEditInfo.setOnClickListener(new SlideEditInfoClick());
 
-
+        slideLogout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent =new Intent(MainActivity.this,LoginActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 
 
@@ -123,7 +133,33 @@ public class MainActivity extends AppCompatActivity {
             btnReceive=view.findViewById(R.id.btn_receive_pop);
             btnAdd.setOnClickListener(new AddFriendClick());
             btnReceive.setOnClickListener(new AddFriendAsClick());
-            popupWindow.setBackgroundDrawable(new ColorDrawable(Color.BLUE));
+
+            // 产生背景变暗效果
+            WindowManager.LayoutParams lp = MainActivity.this.getWindow()
+                    .getAttributes();
+            lp.alpha = 0.5f;
+            MainActivity.this.getWindow().addFlags(WindowManager.LayoutParams.FLAG_DIM_BEHIND);
+            MainActivity.this.getWindow().setAttributes(lp);
+            popupWindow.setTouchable(true);
+            popupWindow.setFocusable(true);
+            popupWindow.setBackgroundDrawable(new ColorDrawable(Color.WHITE));
+//            popupWindow.setBackgroundDrawable(new BitmapDrawable());
+            popupWindow.setOutsideTouchable(true);
+//            popupWindow.showAtLocation(view, Gravity.BOTTOM, 0, 0);
+            popupWindow.update();
+            popupWindow.setOnDismissListener(new PopupWindow.OnDismissListener() {
+
+                // 在dismiss中恢复透明度
+                public void onDismiss() {
+                    WindowManager.LayoutParams lp = MainActivity.this.getWindow()
+                            .getAttributes();
+                    lp.alpha = 1f;
+                    MainActivity.this.getWindow().addFlags(WindowManager.LayoutParams.FLAG_DIM_BEHIND);
+                    MainActivity.this.getWindow().setAttributes(lp);
+                }
+            });
+
+
             popupWindow.showAsDropDown(v,0, 0);
         }
     }

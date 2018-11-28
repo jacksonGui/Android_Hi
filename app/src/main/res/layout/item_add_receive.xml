@@ -9,7 +9,8 @@
         android:layout_height="70dp"
         app:civ_border_width="2dp"
         app:civ_border_color="#fff"
-        android:layout_margin="5dp"/>
+        android:layout_margin="5dp"
+        android:src="@drawable/user_img"/>
     <LinearLayout
         android:layout_marginLeft="20dp"
         android:layout_centerInParent="true"
@@ -35,6 +36,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="接受"
+        android:background="@drawable/btn_border_line"
         android:layout_centerInParent="true"
         android:layout_alignParentRight="true"/>
 

@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.zzg.zcib.activity.AddFriendActivity">
+    tools:context="com.zzg.zcib.activity.AddFriendActivity"
+>
     <LinearLayout
         android:id="@+id/search_top"
         android:layout_width="match_parent"
@@ -12,14 +13,18 @@
         <EditText
             android:id="@+id/add_search_text"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="5"/>
+            android:layout_height="40dp"
+            android:layout_weight="5"
+            android:layout_gravity="center"
+            android:background="@drawable/edit_bg2"/>
         <Button
             android:id="@+id/btn_add_search"
             android:layout_width="0dp"
             android:layout_weight="1"
-            android:layout_height="wrap_content"
-            android:text="搜索"/>
+            android:layout_height="40dp"
+            android:text="搜索"
+            android:layout_margin="5dp"
+            android:background="@drawable/btn_border_line"/>
     </LinearLayout>
     <ListView
         android:id="@+id/list_add_friends"

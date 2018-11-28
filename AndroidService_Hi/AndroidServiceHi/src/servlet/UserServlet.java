@@ -76,10 +76,35 @@ public class UserServlet extends HttpServlet {
 			getFriendGroup(request,response);
 		}else if("updateFriendGroup".equals(action)){
 			updateFriendGroup(request,response);
+		}else if("getImgUrl".equals(action)){
+			getImgUrl(request,response);
 		}
 	}
 	
 	
+
+
+	private void getImgUrl(HttpServletRequest request,
+			HttpServletResponse response) {
+		String username=request.getParameter("username");
+		System.out.println(username);
+		//解决中文登录乱码
+		try {
+			username=URLDecoder.decode(URLDecoder.decode(username, "UTF-8"));
+		} catch (UnsupportedEncodingException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
+		
+		String userImgUrl=userService.getImgUrl(username);
+		
+		try {
+			response.getWriter().write(userImgUrl);
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
 
 
 	private void updateFriendGroup(HttpServletRequest request,
@@ -89,12 +114,12 @@ public class UserServlet extends HttpServlet {
 		String fgroup=request.getParameter("fgroup");
 		
 		//解决中文登录乱码
-				try {
-					fgroup=URLDecoder.decode(URLDecoder.decode(fgroup, "UTF-8"));
-				} catch (UnsupportedEncodingException e1) {
-					// TODO Auto-generated catch block
-					e1.printStackTrace();
-				}
+		try {
+			fgroup=URLDecoder.decode(URLDecoder.decode(fgroup, "UTF-8"));
+		} catch (UnsupportedEncodingException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
 		
 		userService.updateGroup(uid,fid,fgroup);
 		
@@ -139,7 +164,6 @@ public class UserServlet extends HttpServlet {
 		try {
 			response.getWriter().write(jsonArray.toString());
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		

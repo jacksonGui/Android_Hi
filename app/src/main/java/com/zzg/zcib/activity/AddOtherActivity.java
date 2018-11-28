@@ -48,6 +48,7 @@ public class AddOtherActivity extends AppCompatActivity {
                         @Override
                         public void onSuccess(String s) {
                             Toast.makeText(AddOtherActivity.this,"添加成功",Toast.LENGTH_SHORT).show();
+                            AddOtherActivity.this.finish();
                         }
                     });
         }

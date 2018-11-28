@@ -17,14 +17,15 @@
             android:layout_height="50dp"
             app:civ_border_width="2dp"
             app:civ_border_color="#fff"
-            android:layout_margin="5dp"/>
+            android:layout_margin="5dp"
+            android:src="@drawable/user_img"/>
         <TextView
             android:id="@+id/msgitem_textleft"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="asdasd"
-            android:background="@drawable/left"
-            android:textColor="#fff"
+            android:background="@drawable/btn_login_zzz"
+            android:textColor="#000"
             android:layout_toRightOf="@+id/msgitem_imgleft"
             android:layout_marginLeft="10dp"
             android:layout_centerVertical="true"/>
@@ -41,7 +42,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="asdasd"
-            android:background="@drawable/right"
+            android:background="@drawable/btn_login"
             android:textColor="#fff"
             android:layout_toLeftOf="@+id/msgitem_imgright"
             android:layout_centerVertical="true"
@@ -54,7 +55,8 @@
             android:layout_alignParentRight="true"
             android:layout_margin="5dp"
             app:civ_border_width="2dp"
-            app:civ_border_color="#fff"/>
+            app:civ_border_color="#fff"
+            android:src="@drawable/user_img"/>
     </RelativeLayout>
 
     <TextView

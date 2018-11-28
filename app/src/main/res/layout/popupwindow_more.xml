@@ -4,12 +4,14 @@
     android:layout_height="match_parent">
     <Button
         android:id="@+id/btn_add_pop"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="添加"/>
+        android:text="添加"
+        android:background="@null"/>
     <Button
         android:id="@+id/btn_receive_pop"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="接收"/>
+        android:text="接收"
+        android:background="@null"/>
 </LinearLayout>

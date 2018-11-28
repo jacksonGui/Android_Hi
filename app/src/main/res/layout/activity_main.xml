@@ -37,11 +37,12 @@
                 android:textColor="#ffff"/>
             <Button
                 android:id="@+id/more"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_marginRight="10dp"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
                 android:layout_alignParentRight="true"
                 android:layout_centerVertical="true"
-                android:text="+"/>
+                android:background="@drawable/btn_more"/>
         </RelativeLayout>
 
         <RadioGroup
@@ -53,27 +54,30 @@
             <RadioButton
                 android:id="@+id/news_btn"
                 android:layout_width="0dp"
-                android:layout_height="wrap_content"
+                android:layout_height="50dp"
                 android:layout_weight="1"
-                android:text="消息"
+                android:drawableTop="@drawable/radio_btn_new_bg"
+
                 android:gravity="center"
                 android:button="@null"
                 android:textSize="20sp"/>
             <RadioButton
                 android:id="@+id/friends_btn"
                 android:layout_width="0dp"
-                android:layout_height="wrap_content"
+                android:layout_height="50dp"
                 android:layout_weight="1"
                 android:text="好友"
+                android:drawableTop="@drawable/radio_btn_friend_bg"
                 android:gravity="center"
                 android:button="@null"
                 android:textSize="20sp"/>
             <RadioButton
                 android:id="@+id/other_btn"
                 android:layout_width="0dp"
-                android:layout_height="wrap_content"
+                android:layout_height="50dp"
                 android:layout_weight="1"
                 android:text="动态"
+                android:drawableTop="@drawable/radio_btn_other_bg"
                 android:gravity="center"
                 android:button="@null"
                 android:textSize="20sp"/>

@@ -25,7 +25,7 @@ import static com.zzg.zcib.utils.MyVolley.IP_;
 
 public class PersonActivity extends AppCompatActivity {
     private ImageView personImg;
-    private TextView personName,personEmail,personPhone;
+    private TextView personName,personEmail,personPhone,groupText;
     private Button btnAdd,btnChat,btnEdit;
     private String userid,fImgUrl,uImgUrl;
     private Integer fid;
@@ -47,6 +47,7 @@ public class PersonActivity extends AppCompatActivity {
         btnChat=findViewById(R.id.btn_person_chat);
         btnEdit=findViewById(R.id.btn_person_edit);
         personGroup=findViewById(R.id.person_group);
+        groupText=findViewById(R.id.person_group_text);
         userid=getIntent().getExtras().getString("userid");
         fid=getIntent().getExtras().getInt("fid");
         personType=getIntent().getExtras().getString("personType");
@@ -65,17 +66,20 @@ public class PersonActivity extends AppCompatActivity {
             btnChat.setVisibility(View.GONE);
             btnAdd.setVisibility(View.GONE);
             personGroup.setVisibility(View.GONE);
+            groupText.setVisibility(View.GONE);
         }else if (personType.equals("friend")){
             btnEdit.setVisibility(View.GONE);
             btnAdd.setVisibility(View.GONE);
             btnChat.setVisibility(View.VISIBLE);
             personGroup.setVisibility(View.VISIBLE);
+            groupText.setVisibility(View.VISIBLE);
             loadGroup();
         }else if (personType.equals("stranger")){
             btnEdit.setVisibility(View.GONE);
             btnChat.setVisibility(View.GONE);
             btnAdd.setVisibility(View.VISIBLE);
             personGroup.setVisibility(View.GONE);
+            groupText.setVisibility(View.GONE);
         }
     }
 

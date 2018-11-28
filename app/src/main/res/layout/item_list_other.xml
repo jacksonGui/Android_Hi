@@ -14,7 +14,7 @@
             android:layout_height="50dp"
             app:civ_border_width="2dp"
             app:civ_border_color="#fff"
-            android:src="@mipmap/ic_launcher"
+            android:src="@drawable/user_img"
             android:layout_margin="5dp"/>
         <TextView
             android:layout_gravity="center"

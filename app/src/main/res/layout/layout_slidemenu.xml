@@ -2,7 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
-    android:layout_width="330dp"
+    android:layout_width="310dp"
     android:layout_height="match_parent"
     android:background="#273137">
     <com.zzg.zcib.view.CircleImageView
@@ -12,7 +12,8 @@
         android:layout_gravity="center"
         android:layout_marginTop="20dp"
         app:civ_border_width="2dp"
-        app:civ_border_color="#fff"/>
+        app:civ_border_color="#fff"
+        android:src="@drawable/user_img"/>
     <TextView
         android:id="@+id/slidemenu_username"
         android:layout_width="wrap_content"
@@ -40,6 +41,7 @@
         android:textSize="20sp"
         android:layout_marginTop="20dp"/>
     <TextView
+        android:id="@+id/logout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="退出登录"

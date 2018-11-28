@@ -10,7 +10,8 @@
         android:layout_height="70dp"
         app:civ_border_width="2dp"
         app:civ_border_color="#fff"
-        android:layout_margin="5dp"/>
+        android:layout_margin="5dp"
+        android:src="@drawable/user_img"/>
     <LinearLayout
         android:layout_toRightOf="@id/item_add_img"
         android:layout_width="wrap_content"
@@ -35,5 +36,6 @@
         android:layout_height="wrap_content"
         android:layout_alignParentRight="true"
         android:layout_centerVertical="true"
-        android:text="添加"/>
+        android:text="添加"
+        android:background="@drawable/btn_border_line"/>
 </RelativeLayout>

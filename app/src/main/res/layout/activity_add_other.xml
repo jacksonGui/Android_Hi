@@ -5,18 +5,22 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="com.zzg.zcib.activity.AddOtherActivity">
+    tools:context="com.zzg.zcib.activity.AddOtherActivity"
+    android:padding="10dp">
     <EditText
         android:id="@+id/add_other_edit"
         android:layout_width="match_parent"
         android:layout_height="200dp"
         android:inputType="textImeMultiLine"
-        android:gravity="top" />
+        android:gravity="top"
+        android:background="@drawable/edit_bg2"/>
     <Button
         android:id="@+id/btn_add_other"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="确定"
-        android:textSize="20sp"/>
+        android:textSize="20sp"
+        android:background="@drawable/btn_border_line"
+        android:layout_marginTop="5dp"/>
 
 </LinearLayout>

@@ -25,7 +25,7 @@ import java.util.List;
 public class DialogActivity extends AppCompatActivity {
     private TextView name,position;
     private  EditText editText;
-    private Button send;
+    private Button send,back;
     private RecyclerView recyclerView;
     private DialogMsgAdapter dialogMsgAdapter;
     private List<Msg> msgList =new ArrayList<Msg>();
@@ -46,6 +46,7 @@ public class DialogActivity extends AppCompatActivity {
         send=findViewById(R.id.send_btn);
         recyclerView=findViewById(R.id.content_relv);
         name=findViewById(R.id.name_text);
+        back=findViewById(R.id.back_btn);
         uid=getIntent().getExtras().getString("uid");
         fid=getIntent().getExtras().getString("fid");
         fname=getIntent().getExtras().getString("fname");
@@ -63,7 +64,12 @@ public class DialogActivity extends AppCompatActivity {
 
         recyclerView.scrollToPosition(msgList.size()-1);
 
-
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
     }
 
 

@@ -5,60 +5,91 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.zzg.zcib.activity.RegisterActivity"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:background="@drawable/timg">
     <com.zzg.zcib.view.CircleImageView
         android:id="@+id/img_register"
-        android:layout_width="70dp"
-        android:layout_height="70dp"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
         android:layout_margin="5dp"
         app:civ_border_width="2dp"
         app:civ_border_color="#fff"
-        android:src="@mipmap/ic_launcher"/>
+        android:src="@drawable/user_img"
+        android:layout_gravity="center"/>
     <EditText
         android:id="@+id/regi_username"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:maxLines="1"
         android:inputType="text"
-        android:hint="请输入用户名"/>
+        android:hint="请输入用户名"
+        android:background="@drawable/edit_bg"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginBottom="10dp"
+        android:layout_marginTop="10dp"/>
     <EditText
         android:id="@+id/regi_password1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:inputType="textPassword"
+
         android:maxLines="1"
-        android:hint="请输入密码"/>
+        android:hint="请输入密码"
+        android:background="@drawable/edit_bg"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginBottom="10dp"/>
     <EditText
         android:id="@+id/regi_password2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:inputType="textPassword"
+
         android:maxLines="1"
-        android:hint="再次输入密码"/>
+        android:hint="再次输入密码"
+        android:background="@drawable/edit_bg"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginBottom="10dp"/>
     <EditText
         android:id="@+id/regi_email"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:maxLines="1"
         android:inputType="text"
-        android:hint="请输入邮箱"/>
+        android:hint="请输入邮箱"
+        android:background="@drawable/edit_bg"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginBottom="10dp"/>
     <EditText
         android:id="@+id/regi_phone"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:maxLines="1"
         android:inputType="text"
-        android:hint="请输入手机号"/>
+        android:hint="请输入手机号"
+        android:background="@drawable/edit_bg"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginBottom="10dp"/>
     <Button
         android:id="@+id/btn_regi"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="注册"/>
+        android:text="注册"
+        android:background="@drawable/btn_login"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:textSize="20dp"
+        android:textColor="#fff"/>
     <Button
         android:id="@+id/btn_tologin"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="去登录"/>
+        android:text="去登录"
+        android:background="@null"
+        android:textColor="#fff"/>
 
 
 </LinearLayout>

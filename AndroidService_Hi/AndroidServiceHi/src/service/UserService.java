@@ -159,4 +159,9 @@ public class UserService {
 		userDao.updateGroup(uid,fid,fgroup);
 	}
 
+	public String getImgUrl(String username) {
+		List<Map<String,Object>> list=userDao.findImgUrlByUsername(username);
+		return list.get(0).get("imgurl").toString();
+	}
+
 }

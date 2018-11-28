@@ -88,7 +88,7 @@ public class MyVolley {
                 new Response.ErrorListener() {
                     @Override
                     public void onErrorResponse(VolleyError volleyError) {
-                        Toast.makeText(context1,"网络异常",Toast.LENGTH_SHORT).show();
+//                        Toast.makeText(context1,"网络异常",Toast.LENGTH_SHORT).show();
                     }
                 });
         //添加请求

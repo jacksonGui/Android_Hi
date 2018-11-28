@@ -132,4 +132,9 @@ public class UserDao {
 		
 	}
 
+	public List<Map<String, Object>> findImgUrlByUsername(String username) {
+		String sql="select imgurl from user where username=?";
+		return DBUtils.query(sql, username);
+	}
+
 }

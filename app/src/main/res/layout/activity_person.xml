@@ -13,48 +13,115 @@
         android:layout_centerHorizontal="true"
         app:civ_border_width="2dp"
         app:civ_border_color="#fff"
+        android:src="@drawable/user_img"
         android:layout_margin="5dp"/>
-    <TextView
-        android:id="@+id/person_name"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+    <LinearLayout
         android:layout_below="@+id/person_img"
-/>
-    <TextView
-        android:id="@+id/person_email"
+        android:id="@+id/lay1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/person_name"
-/>
-    <TextView
-        android:id="@+id/person_phone"
+        android:padding="10dp">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="账号："
+            android:textSize="20sp"/>
+        <TextView
+            android:id="@+id/person_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:background="@drawable/edit_bg2"
+            />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_below="@+id/lay1"
+        android:id="@+id/lay3"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/person_email"
-/>
-    <EditText
-        android:id="@+id/person_group"
+        android:padding="10dp">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="邮箱："
+            android:textSize="20sp"/>
+        <TextView
+            android:id="@+id/person_email"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:background="@drawable/edit_bg2"
+            />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_below="@+id/lay3"
+        android:id="@+id/lay4"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/person_phone" />
+        android:padding="10dp">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="电话："
+            android:textSize="20sp"/>
+        <TextView
+            android:id="@+id/person_phone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:background="@drawable/edit_bg2"
+            />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_below="@+id/lay4"
+        android:id="@+id/lay5"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp">
+        <TextView
+            android:id="@+id/person_group_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="分组："
+            android:textSize="20sp"/>
+        <EditText
+            android:id="@+id/person_group"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:background="@drawable/edit_bg2"
+            />
+    </LinearLayout>
+
+
+
+
+
     <Button
         android:id="@+id/btn_person_add"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="添加好友"
-        android:layout_alignParentBottom="true"/>
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/btn_border_line"
+        android:layout_margin="10dp"/>
     <Button
         android:id="@+id/btn_person_chat"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="发送消息"
-        android:layout_alignParentBottom="true"/>
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/btn_border_line"
+        android:layout_margin="10dp"/>
     <Button
         android:id="@+id/btn_person_edit"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="修改资料"
-        android:layout_alignParentBottom="true"/>
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/btn_border_line"
+        android:layout_margin="10dp"/>
 
 
 </RelativeLayout>

@@ -6,27 +6,21 @@
         android:id="@+id/swipe_refresh_other"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_above="@+id/btn_add_other"
         >
-        <RelativeLayout
+        <ListView
+            android:id="@+id/list_other"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
-            <ListView
-                android:id="@+id/list_other"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_above="@+id/btn_add_other"
-                >
-
-            </ListView>
-
-
-
-            <Button
-                android:id="@+id/btn_add_other"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="新增"
-                android:layout_alignParentBottom="true"/>
-        </RelativeLayout>
+            android:layout_height="match_parent"
+            >
+        </ListView>
     </android.support.v4.widget.SwipeRefreshLayout>
+    <Button
+        android:id="@+id/btn_add_other"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="新增"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/btn_border_line"
+        android:layout_margin="10dp"/>
 </RelativeLayout>
