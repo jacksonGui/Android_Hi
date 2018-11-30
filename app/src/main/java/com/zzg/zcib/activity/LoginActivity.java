@@ -33,8 +33,8 @@ public class LoginActivity extends AppCompatActivity {
         username=findViewById(R.id.login_username);
         password=findViewById(R.id.login_password);
 
-        password.setTypeface(Typeface.DEFAULT);
-        password.setTransformationMethod(new PasswordTransformationMethod());
+//        password.setTypeface(Typeface.DEFAULT);
+//        password.setTransformationMethod(new PasswordTransformationMethod());
 
         login=findViewById(R.id.login_btn);
         btnToRegister=findViewById(R.id.btn_toregister);

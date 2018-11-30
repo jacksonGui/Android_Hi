@@ -32,7 +32,7 @@
         android:id="@+id/regi_password1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-
+        android:inputType="textPassword"
         android:maxLines="1"
         android:hint="请输入密码"
         android:background="@drawable/edit_bg"
@@ -43,7 +43,7 @@
         android:id="@+id/regi_password2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-
+        android:inputType="textPassword"
         android:maxLines="1"
         android:hint="再次输入密码"
         android:background="@drawable/edit_bg"

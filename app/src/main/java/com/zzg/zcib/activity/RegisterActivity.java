@@ -49,10 +49,10 @@ public class RegisterActivity extends AppCompatActivity {
         regiUsername=findViewById(R.id.regi_username);
         regiPassword1=findViewById(R.id.regi_password1);
         regiPassword2=findViewById(R.id.regi_password2);
-        regiPassword1.setTypeface(Typeface.DEFAULT);
-        regiPassword1.setTransformationMethod(new PasswordTransformationMethod());
-        regiPassword2.setTypeface(Typeface.DEFAULT);
-        regiPassword2.setTransformationMethod(new PasswordTransformationMethod());
+//        regiPassword1.setTypeface(Typeface.DEFAULT);
+//        regiPassword1.setTransformationMethod(new PasswordTransformationMethod());
+//        regiPassword2.setTypeface(Typeface.DEFAULT);
+//        regiPassword2.setTransformationMethod(new PasswordTransformationMethod());
         regiEmail=findViewById(R.id.regi_email);
         regiPhone=findViewById(R.id.regi_phone);
         btnRegister=findViewById(R.id.btn_regi);
