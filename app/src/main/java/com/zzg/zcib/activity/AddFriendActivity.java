@@ -50,9 +50,16 @@ public class AddFriendActivity extends AppCompatActivity {
 
         @Override
         public void onClick(View v) {
-            String usernameF=searchText.getText().toString();
-            if (!"".equals(usernameF)){
-                MyVolley.goVolley("http://" + IP_ + ":8080/AndroidServiceHi/userServlet?action=searchFriends&username=" + usernameF, AddFriendActivity.this,
+
+            String username1=searchText.getText().toString();
+
+            if (!"".equals(username1)){
+                try {
+                    username1 = java.net.URLEncoder.encode(java.net.URLEncoder.encode(username1, "utf-8"));
+                } catch (java.io.UnsupportedEncodingException e) {
+                    e.printStackTrace();
+                }
+                MyVolley.goVolley("http://" + IP_ + ":8080/AndroidServiceHi/userServlet?action=searchFriends&username=" + username1, AddFriendActivity.this,
                         new MyVolley.VolleyCallback() {
                             @Override
                             public void onSuccess(String s) {

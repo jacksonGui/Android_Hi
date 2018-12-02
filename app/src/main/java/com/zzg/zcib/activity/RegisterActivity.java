@@ -265,7 +265,13 @@ public static File getFileByUri(Uri uri,Context context) {
                     Toast.makeText(RegisterActivity.this,"用户名不能为空！",Toast.LENGTH_SHORT).show();
 
                 }else {
-                    MyVolley.goVolley("http://" + IP_ + ":8080/AndroidServiceHi/userServlet?action=hasUser&username=" + regiUsername.getText(), RegisterActivity.this,
+                    String username1=regiUsername.getText().toString();
+                try {
+                    username1 = URLEncoder.encode(URLEncoder.encode(username1, "utf-8"));
+                } catch (UnsupportedEncodingException e) {
+                    e.printStackTrace();
+                }
+                    MyVolley.goVolley("http://" + IP_ + ":8080/AndroidServiceHi/userServlet?action=hasUser&username=" + username1, RegisterActivity.this,
                             new MyVolley.VolleyCallback() {
                                 @Override
                                 public void onSuccess(String s) {

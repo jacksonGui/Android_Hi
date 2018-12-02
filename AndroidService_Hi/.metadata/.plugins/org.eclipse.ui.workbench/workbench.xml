@@ -69,7 +69,7 @@
 </editor>
 <editor activePart="true" focus="true" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="UserServlet.java" partName="UserServlet.java" path="D:/MyAndroid_Hi/AndroidService_Hi/AndroidServiceHi/src/servlet/UserServlet.java" title="UserServlet.java" tooltip="AndroidServiceHi/src/servlet/UserServlet.java" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/AndroidServiceHi/src/servlet/UserServlet.java"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="3053" selectionTopPixel="720"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="13743" selectionTopPixel="6325"/>
 </editor>
 <editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="UserService.java" partName="UserService.java" path="D:/MyAndroid_Hi/AndroidService_Hi/AndroidServiceHi/src/service/UserService.java" title="UserService.java" tooltip="AndroidServiceHi/src/service/UserService.java" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/AndroidServiceHi/src/service/UserService.java"/>
@@ -156,7 +156,7 @@
 <view id="org.eclipse.ui.views.ProblemView" partName="Problems">
 <viewState PRIMARY_SORT_FIELD="org.eclipse.ui.ide.severityAndDescriptionField" categoryGroup="org.eclipse.ui.ide.severity" markerContentGenerator="org.eclipse.ui.ide.problemsGenerator" partName="Problems">
 <expanded>
-<category IMemento.internal.id="Warnings (24 items)"/>
+<category IMemento.internal.id="Warnings"/>
 </expanded>
 <columnWidths org.eclipse.ui.ide.locationField="90" org.eclipse.ui.ide.markerType="90" org.eclipse.ui.ide.pathField="120" org.eclipse.ui.ide.resourceField="90" org.eclipse.ui.ide.severityAndDescriptionField="300"/>
 <visible IMemento.internal.id="org.eclipse.ui.ide.severityAndDescriptionField"/>

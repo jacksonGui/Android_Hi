@@ -343,6 +343,12 @@ public class UserServlet extends HttpServlet {
 	private void searchFriends(HttpServletRequest request,
 			HttpServletResponse response) {
 		String username=request.getParameter("username");
+		try {
+			username=URLDecoder.decode(URLDecoder.decode(username, "UTF-8"));
+		} catch (UnsupportedEncodingException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
 		JSONArray jsonArray=userService.searchFriends(username);
 		System.out.println(jsonArray.toString());
 		try {
@@ -357,6 +363,13 @@ public class UserServlet extends HttpServlet {
 	private void hasUser(HttpServletRequest request,
 			HttpServletResponse response) {
 		String username=request.getParameter("username");
+		//解决中文登录乱码
+				try {
+					username=URLDecoder.decode(URLDecoder.decode(username, "UTF-8"));
+				} catch (UnsupportedEncodingException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
 		
 		boolean flag= userService.hasUser(username);
 		try {
